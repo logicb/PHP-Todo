@@ -122,15 +122,15 @@ FieldCheck.prototype.checkTime = function(str) {
     }
 
     // check the format of the input
-    var timeRegex = /^\d\d:\d\d$/;
+    var timeRegex = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
     if ( !timeRegex.test(str) ) {
         this.errorMsgs += '- Input provided for Time is invalid. Only a string of the format HH:MM (24-hour format).\n';
         return false;
     }
 
     // check the proper numbers for hours and minutes
-    var hour = parseInt(str.substr(0,2));
-    var minute = parseInt(str.substr(3,2));
+    var hour = parseInt(str.substr(0,2), 10);	// have to specify base 10 to make '08' and '09' parsing work
+    var minute = parseInt(str.substr(3,2), 10);
     if ( hour > 24 || hour < 1) {
         this.errorMsgs += '- Input provided for Time is invalid. Only a string of the format HH:MM (24-hour format).\n';
         return false;
