@@ -84,6 +84,8 @@ function FieldCheck() {
 
 /*
  * Check the user input provided for the Name field.
+ * @param str user input for the Name field
+ * @return true if the validation was successful, false otherwise
  */
 FieldCheck.prototype.checkName = function(str) {
 
@@ -109,6 +111,8 @@ FieldCheck.prototype.checkName = function(str) {
 
 /*
  * Check the user input provided for the Time field.
+ * @param str user input for the Time field
+ * @return true if the validation was successful, false otherwise
  */
 FieldCheck.prototype.checkTime = function(str) {
 
